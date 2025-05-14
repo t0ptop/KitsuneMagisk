@@ -1,6 +1,6 @@
 #pragma once
 
-#define JAVA_PACKAGE_NAME "io.github.huskydg.magisk"
+#define JAVA_PACKAGE_NAME "com.toptop.Kitsune"
 // magiskinit will hex patch this constant,
 // appending \0 to prevent the compiler from reusing the string for "1"
 #define RANDOM_SOCKET_NAME  "d30138f2310a9fb9c54a3e0c21f58591\0"
@@ -33,7 +33,7 @@
 
 #define EARLYMNTNAME  "early-mount.d/v2"
 
-constexpr const char *applet_names[] = { "su", "resetprop", nullptr };
+constexpr const char *applet_names[] = { "root", "resetprop", nullptr };
 
 #define POST_FS_DATA_WAIT_TIME       40
 #define POST_FS_DATA_SCRIPT_MAX_TIME 35

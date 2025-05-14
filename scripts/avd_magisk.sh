@@ -134,7 +134,7 @@ if $IS64BIT; then
 else
   ln -s ./magisk32 $MAGISKTMP/magisk
 fi
-ln -s ./magisk $MAGISKTMP/su
+ln -s ./magisk $MAGISKTMP/root
 ln -s ./magisk $MAGISKTMP/resetprop
 ln -s ./magiskpolicy $MAGISKTMP/supolicy
 
