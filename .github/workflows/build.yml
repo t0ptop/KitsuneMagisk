@@ -3,7 +3,7 @@ name: Magisk CI
 on:
   push:
     branches: 
-      - dev
+      - toptop
       - kitsune
   workflow_dispatch:
 
