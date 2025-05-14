@@ -4,7 +4,6 @@ on:
   push:
     branches: 
       - toptop
-      - kitsune
   workflow_dispatch:
 
 jobs:
