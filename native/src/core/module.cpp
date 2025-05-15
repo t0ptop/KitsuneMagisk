@@ -211,7 +211,7 @@ public:
             xsymlink("./magisk", dest.data());
             return;
         }
-        create_and_mount("magisk", src, true);
+        create_and_mount("magxxk", src, true);
     }
 };
 
