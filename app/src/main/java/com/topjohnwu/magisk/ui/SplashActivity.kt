@@ -61,7 +61,9 @@ abstract class SplashActivity<Binding : ViewDataBinding> : NavigationActivity<Bi
             doShowMainUI(savedInstanceState)
         } else {
             Shell.getShell(Shell.EXECUTOR) {
-                if (isRunningAsStub && !it.isRoot) {
+                //默认不判断isRoot
+                //原代码为: if (isRunningAsStub && !it.isRoot)
+                if (isRunningAsStub && false) {
                     showInvalidStateMessage()
                     return@getShell
                 }

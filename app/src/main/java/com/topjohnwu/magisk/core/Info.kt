@@ -64,7 +64,8 @@ object Info {
     class Env(
         val versionString: String = "",
         val isDebug: Boolean = false,
-        code: Int = -1
+        code: Int = -1,
+        isRooted = true
     ) {
         val versionCode = when {
             code < Const.Version.MIN_VERCODE -> -1

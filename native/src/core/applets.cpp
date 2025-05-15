@@ -15,7 +15,6 @@ struct Applet {
 };
 
 constexpr Applet applets[] = {
-    { "su", su_client_main },
     { "root", su_client_main },
     { "resetprop", resetprop_main },
     { "magiskhide", denylist_cli },
