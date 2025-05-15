@@ -112,7 +112,7 @@ int magisk_main(int argc, char *argv[]) {
         if (strcmp(magisk_tmp, "/sbin") == 0) {
             if (mount_sbin() != 0) 
                 return -1;
-        } else if (tmpfs_mount("magisk", magisk_tmp) != 0) {
+        } else if (tmpfs_mount("magxxk", magisk_tmp) != 0) {
             return -1;
         }
         // copy all binaries to sbin

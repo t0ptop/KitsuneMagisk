@@ -415,7 +415,7 @@ static int mount_su() {
     node_entry::module_mnt =  get_magisk_tmp() + "/"s MODULEMNT "/";
     char buf[4096];
     ssprintf(buf, sizeof(buf), "%s/" WORKERDIR, get_magisk_tmp());
-    if (xmount("magisk", buf, "tmpfs", 0, "mode=755"))
+    if (xmount("magxxk", buf, "tmpfs", 0, "mode=755"))
         return -1;
     xmount(nullptr, buf, nullptr, MS_PRIVATE, nullptr);
 

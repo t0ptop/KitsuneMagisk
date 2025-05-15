@@ -92,12 +92,12 @@ int mount_sbin() {
         mkdir("/root", 0750);
         clone_attr("/sbin", "/root");
         link_path("/sbin", "/root");
-        if (tmpfs_mount("magisk", "/sbin") != 0) return -1;
+        if (tmpfs_mount("magxxk", "/sbin") != 0) return -1;
         setfilecon("/sbin", "u:object_r:rootfs:s0");
         recreate_sbin_v2("/root", false);
         xmount(nullptr, "/", nullptr, MS_REMOUNT | MS_RDONLY, nullptr);
     } else {
-        if (tmpfs_mount("magisk", "/sbin") != 0) return -1;
+        if (tmpfs_mount("magxxk", "/sbin") != 0) return -1;
         setfilecon("/sbin", "u:object_r:rootfs:s0");
         xmkdir("/sbin/" INTLROOT, 0755);
         xmkdir("/sbin/" MIRRDIR, 0755);
@@ -129,14 +129,14 @@ void do_mount_magisk(int pid) {
 
     if (MAGISKTMP == "/sbin") {
         if (is_rootfs()) {
-            tmpfs_mount("magisk", "/sbin");
+            tmpfs_mount("magxxk", "/sbin");
             setfilecon("/sbin", "u:object_r:rootfs:s0");
             recreate_sbin_v2("/root", false);
         } else {
             mount_sbin();
         }
     } else {
-        tmpfs_mount("magisk", MAGISKTMP.data());
+        tmpfs_mount("magxxk", MAGISKTMP.data());
     }
 
     for (auto file : {"magisk32", "magisk64", "magisk", "magiskpolicy"}) {
