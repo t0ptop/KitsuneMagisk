@@ -20,9 +20,7 @@ import java.util.jar.JarFile
 
 class ShellInit : Shell.Initializer() {
     override fun onInit(context: Context, shell: Shell): Boolean {
-        //默认不判断isRoot
-        //原代码: if (shell.isRoot)
-        if (true) {
+        if (shell.isRoot) {
             Info.isRooted = true
             RootUtils.bindTask?.let { shell.execTask(it) }
             RootUtils.bindTask = null
@@ -32,9 +30,7 @@ class ShellInit : Shell.Initializer() {
 
             val localBB: File
             if (isRunningAsStub) {
-                //默认不判断isRoot
-                //原代码: if (!shell.isRoot)
-                if (false)
+                if (!shell.isRoot)
                     return true
                 val jar = JarFile(StubApk.current(context))
                 val bb = jar.getJarEntry("lib/${Const.CPU_ABI}/libbusybox.so")
@@ -48,9 +44,7 @@ class ShellInit : Shell.Initializer() {
                 localBB = File(context.applicationInfo.nativeLibraryDir, "libbusybox.so")
             }
 
-            //默认不判断isRoot
-            //原代码为: if (shell.isRoot)
-            if (true) {
+            if (shell.isRoot) {
                 add("export MAGISKTMP=\$(magisk --path)")
                 // Test if we can properly execute stuff in /data
                 Info.noDataExec = !shell.newJob().add("$localBB sh -c \"$localBB true\"").exec().isSuccess
@@ -73,9 +67,7 @@ class ShellInit : Shell.Initializer() {
             }
 
             add(context.rawResource(R.raw.manager))
-            //默认不判断isRoot
-            //原代码为: if (shell.isRoot)
-            if (true) {
+            if (shell.isRoot) {
                 add(context.assets.open("util_functions.sh"))
             }
             add("app_init")

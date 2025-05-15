@@ -59,9 +59,7 @@ abstract class MagiskInstallImpl protected constructor(
     private val shell = Shell.getShell()
     private val service get() = ServiceLocator.networkService
     protected val context get() = ServiceLocator.deContext
-    //默认不判断isRoot
-    //原代码: private val useRootDir = shell.isRoot && Info.noDataExec
-    private val useRootDir = Info.noDataExec
+    private val useRootDir = shell.isRoot && Info.noDataExec
 
     private val rootFS get() = RootUtils.fs
     private val localFS get() = FileSystemManager.getLocal()
