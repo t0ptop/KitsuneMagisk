@@ -110,7 +110,7 @@ else
   MAGISKTMP=/debug_ramdisk
   # If a file name 'magisk' is in current directory, mount will fail
   rm -f magisk
-  mount -t tmpfs -o 'mode=0755' magisk /debug_ramdisk
+  mount -t tmpfs -o 'mode=0755' magxxk /debug_ramdisk
 fi
 
 # Magisk stuff
